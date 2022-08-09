@@ -1,11 +1,14 @@
 import tkinter as tkr
+from tkinter.ttk import *
 # import matplotlib as mp
 # import numpy as np
 from tkinter import messagebox as mb
 import positioning as pos
 import generationing as gen
 
-# important globals
+# important globals:
+# app; screen_width; screen_height; w_width; w_height; color; task;
+# appframe
 app = tkr.Tk()
 app.configure(background="white")
 app.wm_iconbitmap('ujams_icon.ico')
@@ -15,6 +18,11 @@ w_width = app.winfo_width()
 w_height = app.winfo_height()
 color = ["white", "black", "white smoke", "dodger blue", "light"]
 task = "view"
+# test frame customisation
+appframe = Frame(app, style='My.TFrame')
+appframe.place(height=70, width=400, x=83, y=109)
+appframe
+appframe.config()
 # geninfo = gen.GenerateCollection()
 
 # Define window size
