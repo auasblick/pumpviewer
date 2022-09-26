@@ -1,0 +1,19 @@
+UJAMS Pumpviewer
+
+
+General information:
+The pumpviewer is designed to modify characteristic pump curves.
+It can create new curves, and modify existing ones to find the
+most efficient pump in its most efficient operating state for a
+certain use case.
+
+
+Overview:
+ - main
+	central unification of the other modules
+ - generationing
+	module to generate pump curves from graphic information
+	sheets
+ - positioning
+	module which is responsible for the graphic order of the
+	window
