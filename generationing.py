@@ -15,6 +15,7 @@ class GenerateCollection:
     sourcelength = 0
     media_dictionary = {}
     media_length = 0
+    current_image = []
 
     def addsource(self, sourcelocation):
         self.sourcelength += 1
@@ -38,6 +39,9 @@ class GenerateCollection:
 
     def isempty(self):
         return self.sourcelength == 0
+
+    def img2rgb(self):
+        return 0
 
 
 geninfo = GenerateCollection()
