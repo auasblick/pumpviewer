@@ -5,10 +5,11 @@ from tkinter.ttk import *
 from tkinter import messagebox as mb
 import positioning as pos
 import generationing as gen
+import png #debug
+from PIL import ImageTk
 
 # important globals:
 # app; screen_width; screen_height; w_width; w_height; color; task;
-# appframe
 app = tkr.Tk()
 app.configure(background="white")
 app.wm_iconbitmap('ujams_icon.ico')
@@ -18,11 +19,7 @@ w_width = app.winfo_width()
 w_height = app.winfo_height()
 color = ["white", "black", "white smoke", "dodger blue", "light"]
 task = "view"
-# test frame customisation
-appframe = Frame(app, style='My.TFrame')
-appframe.place(height=70, width=400, x=83, y=109)
-appframe
-appframe.config()
+
 # geninfo = gen.GenerateCollection()
 
 # Define window size
@@ -145,6 +142,9 @@ def resize_generate(width, height):
 
     gen_addsource.place(x=xp1 + 10, y=yp1 + 10)
 
+    gen_import_img.config(width=xl3-20, height=yl3-20)
+    gen_import_img.place(x=xp3+10, y=yp3+10)
+
     colorchange()
 
 
@@ -221,6 +221,19 @@ uob = tkr.Button(app, width=10, height=1, text="Update", command=donothing)
 cob = tkr.Button(app, width=10, height=1, text="Clear", command=fuckyou)
 # generate buttons
 gen_addsource = tkr.Button(app, width=10, height=1, text="plusone", command=gen.import_source)
+
+
+# dummy image
+gen_import_img = Frame(app, style='My.TFrame', height=70, width=400)
+img_loc = "C:/Users/Marko/Documents/UJAMS/Feed Pumps/pdfattempt/Amarex_KRT_F__n_3500_1750_rpm.png"
+reader = png.Reader(filename=img_loc)
+x, y, img_rgb, z = reader.read_flat()
+img = ImageTk.getimage(img_rgb)
+
+# test frame customisation
+# appframe = Frame(app, style='My.TFrame')
+# appframe.place(height=70, width=400, x=83, y=109)
+# appframe.config()
 
 # run
 resize()
