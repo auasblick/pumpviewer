@@ -237,9 +237,10 @@ for u in range(img_rgb.shape[0]):
         img_rgb[u, v, 0:3] = img_arr[c:c+3]
         c += 3
 img = Image.fromarray(img_rgb, "RGB")
-img.show()
 imgtk = ImageTk.PhotoImage(img)
 label = Label(gen_import_img, image=imgtk)
+label.pack()
+
 
 # run
 resize()
