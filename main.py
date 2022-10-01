@@ -1,12 +1,12 @@
 import tkinter as tkr
 from tkinter.ttk import *
 # import matplotlib as mp
-# import numpy as np
+import numpy as np
 from tkinter import messagebox as mb
 import positioning as pos
 import generationing as gen
 import png #debug
-from PIL import ImageTk
+from PIL import ImageTk, Image
 
 # important globals:
 # app; screen_width; screen_height; w_width; w_height; color; task;
@@ -168,6 +168,8 @@ def forgetgenerate():
     gen_draw_canvas.place_forget()
     # buttons
     gen_addsource.place_forget()
+    # frames
+    gen_import_img.place_forget()
     print("Generate forgotten")
 
 
@@ -227,13 +229,17 @@ gen_addsource = tkr.Button(app, width=10, height=1, text="plusone", command=gen.
 gen_import_img = Frame(app, style='My.TFrame', height=70, width=400)
 img_loc = "C:/Users/Marko/Documents/UJAMS/Feed Pumps/pdfattempt/Amarex_KRT_F__n_3500_1750_rpm.png"
 reader = png.Reader(filename=img_loc)
-x, y, img_rgb, z = reader.read_flat()
-img = ImageTk.getimage(img_rgb)
-
-# test frame customisation
-# appframe = Frame(app, style='My.TFrame')
-# appframe.place(height=70, width=400, x=83, y=109)
-# appframe.config()
+img_w, img_h, img_arr, z = reader.read_flat()
+img_rgb = np.zeros([img_h, img_w, 3], np.uint8)
+c = 0
+for u in range(img_rgb.shape[0]):
+    for v in range(img_rgb.shape[1]):
+        img_rgb[u, v, 0:3] = img_arr[c:c+3]
+        c += 3
+img = Image.fromarray(img_rgb, "RGB")
+img.show()
+imgtk = ImageTk.PhotoImage(img)
+label = Label(gen_import_img, image=imgtk)
 
 # run
 resize()
