@@ -1,13 +1,13 @@
-UJAMS Pumpviewer
+# Auasblick Pumpviewer
 
+***Note: this branch is still under construction and has not even remotely received a satisfactory state***
 
-General information:
+## General information
 The pumpviewer is designed to modify characteristic pump curves.It can
 create new curves, and modify existing ones to find the most efficient pump
 in its most efficient operating state for a certain use case.
 
-
-Overview:
+## Overview
  - main
 	central unification of the other modules
  - generationing
@@ -18,7 +18,7 @@ Overview:
 	window
 
 
-UX:
+### UX:
  - main
 	main panel (left):
 		displays the characeristic pump curve(s), possibly modified
@@ -38,5 +38,5 @@ UX:
  - modify
 	to be defined
 
-Pump collection file definition:
+### Pump collection file definition:
 to be defined
