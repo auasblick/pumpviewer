@@ -238,8 +238,10 @@ for u in range(img_rgb.shape[0]):
         c += 3
 img = Image.fromarray(img_rgb, "RGB")
 imgtk = ImageTk.PhotoImage(img)
-label = Label(gen_import_img, image=imgtk)
-label.pack()
+#label = Label(gen_import_img, image=imgtk)
+#label.pack()
+#myimg = PhotoImage(gen_import_img, image=imgtk)
+#myimg.pack()
 
 
 # run
