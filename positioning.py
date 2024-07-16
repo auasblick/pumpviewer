@@ -65,7 +65,7 @@ def raw_generate_position(width_in, height_in, furatio=[2, 1]):
         yl3 = xl3 / r3
         yp3 = puffer
         xp3 = np.maximum((xmax3 - xl3)/2 + xl1 + 2*puffer, xl1 + 2*puffer)
-        #print(xl1)
-        #print((xmax3 - xl3)/2 - xl1 + 2*puffer)
-        #print(xl1 + 2*puffer)
+        # print(xl1)
+        # print((xmax3 - xl3)/2 - xl1 + 2*puffer)
+        # print(xl1 + 2*puffer)
     return xp1, yp1, xl1, yl1, xp2, yp2, xl2, yl2, xp3, yp3, xl3, yl3
