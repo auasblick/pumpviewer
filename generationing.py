@@ -3,9 +3,7 @@
 
 
 # import numpy as np
-from tkinter import filedialog
 import os
-import png
 
 
 class GenerateCollection:
@@ -30,10 +28,11 @@ class GenerateCollection:
             self.addpng(sourcelocation)
 
     def addpng(self, pnglocation):
-        reader = png.Reader(filename=pnglocation)
-        self.img_size[0], self.img_size[1], self.img_rgb, img_info = reader.read_flat()
-        print("png file read")
-        print(pnglocation)
+        pass
+        # reader = png.Reader(filename=pnglocation)
+        # self.img_size[0], self.img_size[1], self.img_rgb, img_info = reader.read_flat()
+        # print("png file read")
+        # print(pnglocation)
 
     def addpdf(self):
         print("pdf needs to be added")
