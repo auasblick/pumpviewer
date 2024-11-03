@@ -2,7 +2,7 @@ import sys
 from PyQt6.QtWidgets import QApplication
 from source.pvapp import PvApp
 
-app = QApplication(sys.argv)
-pvapp = PvApp()
-app.exec()
-
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    pvapp = PvApp()
+    app.exec()
