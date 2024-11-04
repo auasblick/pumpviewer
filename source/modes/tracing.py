@@ -30,7 +30,7 @@ class TracingWidget(QWidget):
         self.side_layout.addWidget(self.tuning_panel)
         self.side_layout.addWidget(self.pump_panel)
 
-        # Main window widget
+        # define central widget
         self.central_layout = QHBoxLayout(self)
         self.central_layout.addWidget(self.graph_panel)
         self.central_layout.addLayout(self.side_layout)
