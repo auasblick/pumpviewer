@@ -39,6 +39,7 @@ class FittingWidget(QWidget):
         self.n_label = QLabel("Rotations [n]")
         self.n_value = QLabel(f"{0}")
         self.n_slider = QSlider(Qt.Orientation.Horizontal)
+        self.n_slider.sliderMoved.connect(self.update_rotation)
         n_layout.addWidget(self.n_label)
         n_layout.addWidget(self.n_value)
         n_layout.addWidget(self.n_slider)
@@ -46,6 +47,7 @@ class FittingWidget(QWidget):
         self.d_label = QLabel("Diameter [mm]")
         self.d_value = QLabel(f"{0}")
         self.d_slider = QSlider(Qt.Orientation.Horizontal)
+        self.d_slider.sliderMoved.connect(self.update_diameter)
         d_layout.addWidget(self.d_label)
         d_layout.addWidget(self.d_value)
         d_layout.addWidget(self.d_slider)
@@ -64,6 +66,7 @@ class FittingWidget(QWidget):
         self.pump_scroll.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
         self.pump_scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.pump_scroll.setWidgetResizable(True)
+        # TODO: fix scrollable: https://www.pythonguis.com/tutorials/pyqt6-qscrollarea/
 
         self.side_layout = QVBoxLayout()
         self.side_layout.addWidget(self.tuning_panel)
@@ -78,3 +81,11 @@ class FittingWidget(QWidget):
         # Set the stretch factors: 75% to graph panel, 25% to side container
         self.central_layout.setStretch(0, 3)  # Graph panel stretch factor
         self.central_layout.setStretch(1, 1)  # Side panel stretch factor
+
+
+    def update_rotation(self):
+        self.n_value.setText(f"{self.n_slider.value()}")
+
+
+    def update_diameter(self):
+        self.d_value.setText(f"{self.d_slider.value()}")
