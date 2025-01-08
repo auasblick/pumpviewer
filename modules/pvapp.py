@@ -2,8 +2,10 @@ from PyQt6.QtWidgets import (
     QTabWidget,
     QMainWindow)
 from PyQt6.QtGui import QIcon
-from source.modes.fitting import FittingWidget
-from source.modes.tracing import TracingWidget
+from modules.fitting.fitting import FittingWidget
+from modules.tracing.tracing import TracingWidget
+from modules.qt.QTHelp import is_dark_mode
+
 
 class PvApp(QMainWindow):
     """
@@ -12,6 +14,18 @@ class PvApp(QMainWindow):
     def __init__(self):
         # inherit from
         super().__init__()
+
+        # determine color based on whether dark mode is active
+        if is_dark_mode():
+            background_color = "rgb(32, 32, 32)"
+            foreground_color = "rgb(240, 240, 240)"
+        else:
+            background_color = "rgb(240, 240, 240)"
+            foreground_color = "rgb(0, 0, 0)"
+        # Apply the background and foreground colors
+        self.background_color = background_color
+        self.foreground_color = foreground_color
+        self.setStyleSheet(f"background-color: {background_color}; color: {foreground_color};")
 
         # visual identifiers
         ujams_icon = QIcon(r"source/media/ujams_icon.ico")

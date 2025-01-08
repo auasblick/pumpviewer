@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QWidget
 
+
 def is_dark_mode() -> bool:
     # only applies for windows
     try:
@@ -38,7 +39,6 @@ class Panel(QWidget):
         self.background_color = background_color
         self.foreground_color = foreground_color
         self.setStyleSheet(f"background-color: {background_color}; color: {foreground_color};")
-
 
     def set_background_color(self, color):
         self.background_color = color

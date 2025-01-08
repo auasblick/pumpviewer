@@ -1,3 +1,4 @@
+# TODO: refactor and integrate into appropriate module
 # this script is dedicated to the extraction of characteristic
 # pump curve information
 
