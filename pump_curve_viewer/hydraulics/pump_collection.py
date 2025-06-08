@@ -15,7 +15,7 @@ class MediaType(Enum):
 
 class PumpSource:
     def __init__(self, location: Optional[Path] = None):
-        self.__type: MediaType
+        self.__type: Optional[MediaType] = None
         self.__location: Optional[Path] = None
         if location is not None:
             self.set_location(location)
