@@ -1,4 +1,7 @@
-from PyQt6.QtWidgets import (
+import numpy as np
+import pyqtgraph as pg
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
     QWidget,
     QLabel,
     QSlider,
@@ -6,10 +9,9 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QHBoxLayout
 )
-from PyQt6.QtCore import Qt
-import pyqtgraph as pg
+
 from source.QTHelp import Panel
-import numpy as np
+
 
 class FittingWidget(QWidget):
     def __init__(self, parent=None):
@@ -66,7 +68,7 @@ class FittingWidget(QWidget):
         self.pump_scroll.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
         self.pump_scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.pump_scroll.setWidgetResizable(True)
-        # TODO: fix scrollable: https://www.pythonguis.com/tutorials/pyqt6-qscrollarea/
+        # TODO: fix scrollable: https://www.pythonguis.com/tutorials/PySide6-qscrollarea/
 
         self.side_layout = QVBoxLayout()
         self.side_layout.addWidget(self.tuning_panel)

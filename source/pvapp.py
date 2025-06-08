@@ -1,9 +1,11 @@
-from PyQt6.QtWidgets import (
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import (
     QTabWidget,
     QMainWindow)
-from PyQt6.QtGui import QIcon
+
 from source.modes.fitting import FittingWidget
 from source.modes.tracing import TracingWidget
+
 
 class PvApp(QMainWindow):
     """

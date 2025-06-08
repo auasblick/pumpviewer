@@ -1,6 +1,8 @@
-from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout
-from PyQt6.QtCore import Qt
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout
+
 from source.QTHelp import Panel
+
 
 class TracingWidget(QWidget):
     def __init__(self, parent=None):

@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QWidget
+from PySide6.QtWidgets import QWidget
 
 def is_dark_mode() -> bool:
     # only applies for windows
