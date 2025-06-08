@@ -10,7 +10,7 @@ from PySide6.QtWidgets import (
     QHBoxLayout
 )
 
-from source.QTHelp import Panel
+from pump_curve_viewer.user_interface.panel import Panel
 
 
 class FittingWidget(QWidget):

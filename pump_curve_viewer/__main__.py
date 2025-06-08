@@ -2,9 +2,9 @@ import sys
 
 from PySide6.QtWidgets import QApplication
 
-from source.pvapp import PvApp
+from user_interface.main_window import MainWindow
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    pvapp = PvApp()
+    window = MainWindow()
     app.exec()

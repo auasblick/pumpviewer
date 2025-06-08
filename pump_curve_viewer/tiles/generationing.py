@@ -1,7 +1,6 @@
 # this script is dedicated to the extraction of characteristic
 # pump curve information
 
-
 # import numpy as np
 import os
 
