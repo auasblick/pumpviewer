@@ -1,4 +1,4 @@
-from importlib.resources import files as ui_files
+from importlib.resources import files
 from pathlib import Path
 
 from PySide6.QtGui import QIcon
@@ -9,6 +9,7 @@ from PySide6.QtWidgets import (
 
 from pump_curve_viewer.tiles.fitting import FittingWidget
 from pump_curve_viewer.tiles.tracing import TracingWidget
+from pump_curve_viewer.user_interface import resources
 
 
 class MainWindow(QMainWindow):
@@ -16,11 +17,10 @@ class MainWindow(QMainWindow):
     This is the main window of the pump curve viewer, and holds all the submenus
     """
     def __init__(self):
-        # inherit from
         super().__init__()
 
         # visual identifiers
-        icon_path = Path(ui_files("user_interface").joinpath("resources").joinpath("ujams_icon.ico"))
+        icon_path = Path(str(files(resources))).joinpath("ujams_icon.ico")
         self.setWindowIcon(QIcon(str(icon_path)))
         self.setWindowTitle("Auasblick Pump Curve Viewer")
         self.setMinimumSize(200, 200)
