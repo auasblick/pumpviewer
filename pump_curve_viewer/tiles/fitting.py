@@ -10,24 +10,23 @@ from pump_curve_viewer.user_interface.tuning_panel import TuningPanel
 
 
 class FittingWidget(QWidget):
-    def __init__(self, parent=None):
+    def __init__(self, parent: QWidget):
         super().__init__(parent)
 
-        # sizing
-        self.setMinimumWidth(1000)
+        # drawing panel
+        self.__pump_graph: PumpGraph = PumpGraph(self)
 
-        ## Drawing panel
-        self.__pump_graph: PumpGraph = PumpGraph()
-
-        # Side panels
-        self.__tuning_panel = TuningPanel(self)
+        # side panels
+        self.__tuning_panel: TuningPanel = TuningPanel(self)
         self.__pump_scrolling_panel: PumpScroll = PumpScroll(self)
         self.__side_layout = QVBoxLayout()
         self.__side_layout.addWidget(self.__tuning_panel, stretch=1)
         self.__side_layout.addWidget(self.__pump_scrolling_panel, stretch=1)
 
-        # define central widget
+        # layout
         self.central_layout = QHBoxLayout(self)
         self.central_layout.addWidget(self.__pump_graph, stretch=3)
         self.central_layout.addLayout(self.__side_layout, stretch=1)
 
+        # sizing
+        self.setMinimumSize(800, 200)

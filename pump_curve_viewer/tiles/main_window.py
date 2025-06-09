@@ -28,11 +28,12 @@ class MainWindow(QMainWindow):
 
         # Tabs
         self.tab_widget = QTabWidget(self)
-        self.fit = FittingWidget()
+        self.fit = FittingWidget(self)
         self.tab_widget.addTab(self.fit, "Fitting")
         self.trace = TracingWidget()
         self.tab_widget.addTab(self.trace, "Tracing")
 
+        # layout
         self.setCentralWidget(self.tab_widget)
 
         # Show
